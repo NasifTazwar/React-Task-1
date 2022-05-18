@@ -1,0 +1,45 @@
+.inputField {
+    border: transparent;
+    background: transparent;
+    padding: 15px 0 15px 0;
+    margin-top: 25px;
+    font-size: 25px;
+    font-weight: 700;
+    margin-left: 12px;
+    color: #6A6F71;
+    outline: none;
+
+}
+.inputField:active{
+    background: transparent;
+}
+.questionTextBold{
+    color: #91B9C7;
+}
+.questionText{
+    color: #7DAEBA;
+    text-align: left;
+}
+.Custombutton{
+    background-color: #E1EAED;
+    /* border-radius: 4px; */
+    /* display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    /* padding: 14px ; */
+    gap: 12px;
+    width: max-content;
+    padding: 2px;
+    /* border-style: solid 10px; */
+}
+.okDraw{
+    background-color: #85BBC6;
+    padding: 7px 12px 7px 12px;
+    border-color: #2F5761;
+    color: #2F5761;
+    /* margin: 2px; */
+    
+}
+.okDraw:hover{
+    background-color: #69959e80;
+}
