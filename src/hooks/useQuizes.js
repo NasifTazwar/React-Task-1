@@ -9,6 +9,7 @@ const useQuizes = () => {
   //   taking value from each input and updating the correct answer from quiz
   const handleSimpleInput = (e) => {
     answeredQuiz[currentQuestion].correct_answer = e.target.value;
+    // answeredQuiz[currentQuestion].answers = e.target.value;
   };
 
   // ------------------------------

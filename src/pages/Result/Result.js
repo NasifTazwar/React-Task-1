@@ -2,12 +2,18 @@ import React from 'react';
 import useAuth from '../../hooks/useAuth';
 
 const Result = () => {
-    const { handleSubmit,answeredQuiz } = useAuth();
+    const { answeredQuiz,currentQuestion } = useAuth();
     console.log(answeredQuiz);
+    
+    const handleSubmit = (answeredQuiz1) => {
+        const allAnswers = answeredQuiz1.map((answer) => answer.correct_answer);
+        console.log(allAnswers);
+        return (
+            <>{allAnswers}</>
+        )
+      };
 
-    const answeds= (oji) =>{
-        console.log(oji);
-    }
+    
     return (
         <div>
             <h1>All the questions and results are shown here along with your scores...</h1>
@@ -25,14 +31,20 @@ const Result = () => {
             {
                 answeredQuiz.map((answered)=> (
                     
-                    <tbody>
+                    <tbody key={answered.id}>
                         <tr>
                             <th scope="row">{answered.id}</th>
                             <td>{answered.type}</td>
                             <td>{answered.question}</td>
-                            <td>{answered.answers.answer}</td>
-                            {/* <button onClick={()=>{answeds(answered)}}>dd</button> */}
+                            {/* <td>{answered.a}
+
+                            </td> */}
+                            
                             <td>{answered.correct_answer}</td>
+                            <td>{answered.answers.length}</td>
+                            {/* <td>{handleSubmit(answered.answers)}
+
+                            </td> */}
                         </tr>
                     </tbody>
                 ))

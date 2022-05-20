@@ -1,6 +1,6 @@
 .home {
  
-
+    
   
 }
 .quizContainer{
@@ -27,6 +27,7 @@ background-color: #E5F2F3;
     border-radius: 10px;
     color: white;
     font-weight: bold;
+    margin-right: 700px;
 }
 .nextBtns{
     border: transparent;

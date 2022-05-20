@@ -7,7 +7,7 @@ import MultipleChoice from "../../components/MultipleChoice/MultipleChoice";
 import MultipleSelectionChoice from "../../components/MultipleSelectionChoice/MultipleSelectionChoice";
 import ShortAnswer from "../../components/ShortAnswer/ShortAnswer";
 import TrueFalse from "../../components/TrueFalse/TrueFalse";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useSearchParams } from "react-router-dom";
 
 const Home = () => {
   const { currentQuestion, setCurrentQuestion, handleSubmit } = useAuth();
@@ -42,10 +42,27 @@ const Home = () => {
     }
   };
 
+
+  const [searchParams] = useSearchParams();
+   const newQuizList= searchParams.get('quiz');
+  //  console.log(newQuizList);
+
+   const quizParams = [];
+   for(let entry of searchParams.entries()) {
+    quizParams.push(entry);
+  }
+  console.log(quizParams);
+    // const params = Object.fromEntries([...searchParams]);
+    // console.log(params);
+
+    // for (const entry of searchParams.entries()) {
+    //   console.log(entry);
+    // }
+
   
 
   return (
-    <div className={styles.home}>
+    <div className="container d-flex flex-column align-items-center mt-5">
       {/* redering the matched quiz with type and curent number */}
       <div className={styles.quizContainer}>{renderElement()}</div>
 
